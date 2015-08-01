@@ -30,6 +30,11 @@ get('/add-information', [
 	'uses' => 'Frontend\MainController@addInfo'
 ]);
 
+get('map', [
+	'as'	=> 'frontend.map',
+	'uses' => 'Frontend\MainController@map'
+]);
+
 
 
 Route::group(['prefix' => 'control-panel'], function()

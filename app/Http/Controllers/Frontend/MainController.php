@@ -34,4 +34,9 @@ class MainController extends Controller
     {
     	return view('frontend.infoadd');
     }
+
+    public function map()
+    {
+        return view('frontend.map');
+    }
 }

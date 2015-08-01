@@ -19,6 +19,7 @@
 								<li><a href="{!! URL::route('frontend.donation.group') !!}">Donation Groups</a></li>
 								<li><a href="{!! URL::route('frontend.news') !!}">News</a></li>
 								<li><a href="{!! URL::route('frontend.addinfo') !!}">Add Information</a></li>
+								<li><a href="{!! URL::route('frontend.map') !!}">Map</a></li>
 							</ul>
 						</li>
 					</ul>
