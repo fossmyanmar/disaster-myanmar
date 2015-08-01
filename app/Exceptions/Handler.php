@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Disaster\Exceptions;
 
 use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;

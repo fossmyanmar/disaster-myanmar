@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Disaster\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        require app_path('Poutkaya/Helpers/FormHelper.php');
+        require app_path('Poutkaya/Helpers/Helpers.php');
     }
 
     /**

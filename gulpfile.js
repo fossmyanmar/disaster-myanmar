@@ -10,7 +10,17 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
+ elixir.config.sourcemaps = false;
+ elixir(function(mix) {
+ 	//css
+ 	mix.copy(
+ 		'vendor/bower_components/toastr/toastr.css', 
+ 		'public/assets/css/vendor/toastr.css'
+ 		);
 
-elixir(function(mix) {
-    mix.sass('app.scss');
-});
+ 	//Js
+ 	mix.copy(
+ 		'vendor/bower_components/toastr/toastr.js', 
+ 		'public/assets/js/vendor/toastr.js'
+ 		);
+ });
