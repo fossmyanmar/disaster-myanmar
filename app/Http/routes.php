@@ -10,10 +10,27 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-get('/', function()
-{
-	echo "hello";
-});
+get('/', [
+	'as' => 'frontend.index',
+	'uses' => 'Frontend\MainController@index'
+]);
+
+get('/donation-groups', [
+	'as' => 'frontend.donation.group',
+	'uses' => 'Frontend\MainController@donationGroup'
+]);
+
+get('/news', [
+	'as' => 'frontend.news',
+	'uses' => 'Frontend\MainController@news'
+]);
+
+get('/add-information', [
+	'as' => 'frontend.addinfo',
+	'uses' => 'Frontend\MainController@addInfo'
+]);
+
+
 
 Route::group(['prefix' => 'control-panel'], function()
 {
