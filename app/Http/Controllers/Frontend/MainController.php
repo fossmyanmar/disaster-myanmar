@@ -22,7 +22,7 @@ class MainController extends Controller
 
     public function donationGroup()
     {
-
+        return view('frontend.groups');
     }
 
     public function news()
