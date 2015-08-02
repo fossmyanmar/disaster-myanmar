@@ -35,7 +35,10 @@ get('map', [
 	'uses' => 'Frontend\MainController@map'
 ]);
 
-
+get('/submit/information', [
+	'as'	=> 'frontend.submit.information',
+	'uses' 	=> 'Frontend\SubmitController@information'
+]);
 
 Route::group(['prefix' => 'control-panel'], function()
 {

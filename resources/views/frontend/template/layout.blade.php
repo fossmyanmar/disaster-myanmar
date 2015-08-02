@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Myanmar Flood</title>
+	<title>Myanmar Diasters</title>
 	@include('frontend.template.partials.style')
 </head>
 <body>
