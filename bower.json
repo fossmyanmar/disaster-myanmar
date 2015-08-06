@@ -5,6 +5,11 @@
     "Naing Win <konaingwin@gmail.com>"
   ],
   "dependencies": {
-    "toastr": "~2.1.1"
+    "toastr": "~2.1.1",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "font-awesome": "~4.4.0",
+    "jquery.scrollTo": "~2.1.1",
+    "jquery-nicescroll": "~3.6.0"
   }
 }

@@ -143,6 +143,7 @@ return [
         Disaster\Providers\AppServiceProvider::class,
         Disaster\Providers\EventServiceProvider::class,
         Disaster\Providers\RouteServiceProvider::class,
+        Disaster\Providers\DisasterProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,

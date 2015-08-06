@@ -13,8 +13,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require app_path('Poutkaya/Helpers/FormHelper.php');
-        require app_path('Poutkaya/Helpers/Helpers.php');
+        require app_path('DisasterLib/Helpers/FormHelper.php');
+        require app_path('DisasterLib/Helpers/Helpers.php');
     }
 
     /**

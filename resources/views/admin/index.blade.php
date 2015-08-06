@@ -1,42 +1,51 @@
-@extends('admin.template.layout')
+@extends('admin.theme.layout')
 
 @section('content')
-<div class="row" style="margin-bottom:5px;">
-	<div class="col-md-3">
-		<div class="sm-st clearfix">
-			<span class="sm-st-icon st-red"><i class="fa fa-check-square-o"></i></span>
-			<div class="sm-st-info">
-				<span>3200</span>
-				Total Tasks
+<div class="row state-overview">
+	<div class="col-lg-3 col-sm-6">
+		<section class="panel">
+			<div class="symbol red">
+				<i class="fa fa-clock-o"></i>
 			</div>
-		</div>
+			<div class="value">
+				<h1 class="count">120</h1>
+				<p>Current Disaster</p>
+			</div>
+		</section>
 	</div>
-	<div class="col-md-3">
-		<div class="sm-st clearfix">
-			<span class="sm-st-icon st-violet"><i class="fa fa-envelope-o"></i></span>
-			<div class="sm-st-info">
-				<span>2200</span>
-				Total Messages
+	
+	<div class="col-lg-3 col-sm-6">
+		<section class="panel">
+			<div class="symbol terques">
+				<i class="fa fa-group"></i>
 			</div>
-		</div>
+			<div class="value">
+				<h1 class="count">120</h1>
+				<p>NGO</p>
+			</div>
+		</section>
 	</div>
-	<div class="col-md-3">
-		<div class="sm-st clearfix">
-			<span class="sm-st-icon st-blue"><i class="fa fa-dollar"></i></span>
-			<div class="sm-st-info">
-				<span>100,320</span>
-				Total Profit
+	<div class="col-lg-3 col-sm-6">
+		<section class="panel">
+			<div class="symbol yellow">
+				<i class="fa fa-globe"></i>
 			</div>
-		</div>
+			<div class="value">
+				<h1 class="count">120</h1>
+				<p>Locations</p>
+			</div>
+		</section>
 	</div>
-	<div class="col-md-3">
-		<div class="sm-st clearfix">
-			<span class="sm-st-icon st-green"><i class="fa fa-paperclip"></i></span>
-			<div class="sm-st-info">
-				<span>4567</span>
-				Total Documents
+	<div class="col-lg-3 col-sm-6">
+		<section class="panel">
+			<div class="symbol blue">
+				<i class="fa fa-bar-chart-o"></i>
 			</div>
-		</div>
+			<div class="value">
+				<h1 class="count">120</h1>
+				<p>Some Caption</p>
+			</div>
+		</section>
 	</div>
 </div>
 @stop

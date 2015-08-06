@@ -12,9 +12,10 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-        		'name'	=> 'Naing Win',
+        		'name'	=> 'Admin',
         		'email' 	=> 'admin@email.com',
-        		'password' 	=> \Hash::make('admin')
+        		'password' 	=> \Hash::make('admin'),
+                    'role' => 'admin'
         	]);
     }
 }

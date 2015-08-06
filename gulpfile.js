@@ -19,6 +19,12 @@ var elixir = require('laravel-elixir');
  		);
 
  	//Js
+ 	//Jquery
+ 	mix.copy(
+ 		'vendor/bower_components/jquery/jquery.min.js', 
+ 		'public/assets/js/vendor/jquery.js'
+ 		);
+
  	mix.copy(
  		'vendor/bower_components/toastr/toastr.js', 
  		'public/assets/js/vendor/toastr.js'
