@@ -5,4 +5,5 @@
 {!! Html::style('assets/admin-theme/style.css') !!}
 {!! Html::style('assets/admin-theme/style-responsive.css') !!}
 {!! Html::style('assets/admin-theme/toastr/toastr.css') !!}
+{!! Html::style('assets/css/vendor/bootstrap-datetimepicker.min.css') !!}
 @yield('css')

@@ -23,4 +23,10 @@ class State extends Model
 	    {
 	        return $this->hasManyThrough('Disaster\DisasterLib\Models\City', 'Disaster\DisasterLib\Models\Village', 'state_id', 'city_id');
 	    }
+
+	//State has many ngos
+	public function ngos()
+	{
+		return $this->hasMany('Disaster\DisasterLib\Models\Ngo', 'state_id');
+	}
 }

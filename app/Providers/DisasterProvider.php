@@ -46,5 +46,11 @@ class DisasterProvider extends ServiceProvider
             'Disaster\DisasterLib\Interfaces\NgosInterface',
             'Disaster\DisasterLib\Repositories\NgosRepository'
         );
+
+        //Ngo Contact Interface and Repository Bind
+        $this->app->bind(
+            'Disaster\DisasterLib\Interfaces\NgoContactsInterface',
+            'Disaster\DisasterLib\Repositories\NgoContactsRepository'
+        );
     }
 }

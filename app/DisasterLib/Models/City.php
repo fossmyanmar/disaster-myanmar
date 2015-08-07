@@ -23,4 +23,10 @@ class City extends Model
 	{
 		return $this->hasMany('Disaster\DisasterLib\Models\Village');
 	}
+
+	//City has many NGOs
+	public function ngos()
+	{
+		return $this->hasMany('Disaster\DisasterLib\Models\Ngo', 'city_id');
+	}
 }

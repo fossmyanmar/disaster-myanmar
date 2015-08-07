@@ -1,5 +1,5 @@
 {
-  "name": "poutkaya",
+  "name": "disaster",
   "version": "0.1",
   "authors": [
     "Naing Win <konaingwin@gmail.com>"
@@ -10,6 +10,7 @@
     "jquery": "~2.1.4",
     "font-awesome": "~4.4.0",
     "jquery.scrollTo": "~2.1.1",
-    "jquery-nicescroll": "~3.6.0"
+    "jquery-nicescroll": "~3.6.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.15.35"
   }
 }

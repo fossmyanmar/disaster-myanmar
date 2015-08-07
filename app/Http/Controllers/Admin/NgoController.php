@@ -8,15 +8,19 @@ use Disaster\Http\Requests;
 use Disaster\Http\Requests\Admin\NgosRequest;
 use Disaster\Http\Controllers\Controller;
 use Disaster\DisasterLib\Interfaces\NgosInterface;
+use Disaster\DisasterLib\Interfaces\StatesInterface;
 
 class NgoController extends Controller
 {
     protected $ngos;
+    protected $states;
 
     public function __construct(
-        NgosInterface $ngos)
+        NgosInterface $ngos,
+        StatesInterface $states)
     {
         $this->ngos = $ngos;
+        $this->states = $states;
     }
 
     /**
@@ -38,7 +42,8 @@ class NgoController extends Controller
      */
     public function create()
     {
-        //
+        $states = $this->states->getList();
+        return view('admin.ngos.add', compact('states'));
     }
 
     /**
@@ -52,8 +57,18 @@ class NgoController extends Controller
         $created = $this->ngos->create(array(
             'name'          => $request->input('name'),
             'mm_name'   => $request->input('mm_name'),
-            'type'  => $request->input('type'),
-            'mm_type ' => $request->input('mm_type'),
+            'founder' => $request->input('founder'), 
+            'mm_founder' => $request->input('mm_founder'),
+            'volunteers_count' => $request->input('volunteers_count'), 
+            'phone' => $request->input('phone'), 
+            'email' => $request->input('email'), 
+            'facebook' => $request->input('facebook'), 
+            'state_id' => $request->input('state_id'), 
+            'city_id' => $request->input('city_id'), 
+            'address' => $request->input('address'), 
+            'bank_account' => $request->input('bank_account'), 
+            'founded_date' => $request->input('founded_date'),
+            'slogan' => $request->input('slogan'),
             ));
         if($created)
         {

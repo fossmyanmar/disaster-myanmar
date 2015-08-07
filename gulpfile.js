@@ -14,19 +14,27 @@ var elixir = require('laravel-elixir');
  elixir(function(mix) {
  	//css
  	mix.copy(
+ 		'vendor/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css', 
+ 		'public/assets/css/vendor/bootstrap-datetimepicker.min.css'
+ 		);
+ 	mix.copy(
  		'vendor/bower_components/toastr/toastr.css', 
  		'public/assets/css/vendor/toastr.css'
  		);
 
  	//Js
- 	//Jquery
  	mix.copy(
- 		'vendor/bower_components/jquery/jquery.min.js', 
- 		'public/assets/js/vendor/jquery.js'
+ 		'vendor/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', 
+ 		'public/assets/js/vendor/bootstrap-datetimepicker.js'
  		);
 
  	mix.copy(
  		'vendor/bower_components/toastr/toastr.js', 
  		'public/assets/js/vendor/toastr.js'
+ 		);
+
+ 	mix.copy(
+ 		'vendor/bower_components/moment/src', 
+ 		'public/assets/js/vendor/moment'
  		);
  });

@@ -38,6 +38,7 @@
 					</li>
 				</ul>
 			</li>
+
 			<li>
 				<a href="{!! URL::route('ngos.index') !!}">
 					<i class="fa fa-group"></i>

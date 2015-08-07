@@ -51,12 +51,12 @@ Form::macro('chkbox', function($name, $label, $value = null)
 	";
 });
 
-Form::macro('date', function($name, $label, $value = null)
+Form::macro('datetime', function($name, $label, $value = null)
 {
 	return  "
 		<div class='form-group'>
 	            <div class='input-group date' id={$name}>
-	                <input type='text' class='form-control' name={$name}/>
+	                <input type='text' class='form-control' name={$name} placeholder={$label} />
 	                <span class='input-group-addon'>
 	                    <span class='fa fa-calendar'>
 	                    </span>
