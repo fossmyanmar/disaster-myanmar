@@ -84,5 +84,10 @@ Route::group(['prefix' => 'control-panel'], function()
 		Route::resource('cities', 'Admin\CityController', ['names' => set_route_name('cities')]);
 		Route::resource('villages', 'Admin\VillageController', ['names' => set_route_name('villages')]);
 		Route::resource('ngos', 'Admin\NgoController', ['names' => set_route_name('ngos')]);
+		get('ngos/{id}/add-contacts', [
+			'as'	=> 'ngos.contact.add',
+			'uses' => 'Admin\NgoContactController@add'
+		]);
+		Route::resource('ngo-contacts', 'Admin\NgoContactController', ['names' => set_route_name('ngo-contacts')]);
 	});
 });

@@ -41,7 +41,7 @@
 								<button class="btn btn-danger btn-xs list-delete" data-toggle="modal" data-target="#delete-{!! $ngo->id !!}"><i class="fa fa-times"></i></button>
 								@include('admin.partials.delete', array('url' => 'ngos.destroy', 'data' => $ngo))
 								
-								<a href="#" class="add-ngocontact btn btn-info btn-xs"><i class="fa fa-phone"></i></a>
+								<a href="{!! URL::route('ngos.contact.add', ['id' => $ngo->id]) !!}" class="add-ngocontact btn btn-info btn-xs"><i class="fa fa-plus"></i></a>
 
 								<a href="#" class="list-view btn btn-default btn-xs"><i class="fa fa-search"></i></a>
 							</td>
