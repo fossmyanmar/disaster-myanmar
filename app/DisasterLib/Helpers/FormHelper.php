@@ -51,6 +51,16 @@ Form::macro('chkbox', function($name, $label, $value = null)
 	";
 });
 
+Form::macro('radi', function($name, $label, $value = null, $condition = null)
+{
+	return "<div class='radio'>
+	  <label>
+	    <input type='radio' name='{$name}' id='{$name}' value='{$value}' {$condition}>
+	    {$label}
+	  </label>
+	</div>";
+});
+
 Form::macro('datetime', function($name, $label, $value = null)
 {
 	return  "

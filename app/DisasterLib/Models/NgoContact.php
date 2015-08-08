@@ -10,7 +10,20 @@ class NgoContact extends Model
 	protected $table = 'contact_persons';
 
 	//Set fillable table column
-	protected $fillable = array('name', 'mm_name', 'phone', 'address', 'mm_address', 'ngo_id', 'state_id', 'city_id', 'village_id');
+	protected $fillable = array(
+		'name', 
+		'mm_name', 
+		'phone', 
+		'email',
+		'facebook',
+		'website',
+		'address', 
+		'nrc',
+		'ngo_id', 
+		'state_id', 
+		'city_id', 
+		'village_id'
+	);
 
 	//Relationship to Ngo
 	public function ngo()

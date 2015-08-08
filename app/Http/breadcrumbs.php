@@ -45,6 +45,12 @@ Breadcrumbs::register('admin.ngos', function($breadcrumbs)
 	$breadcrumbs->push('<i class="fa fa-group"></i> NGO', route('ngos.index'));
 });
 
+Breadcrumbs::register('admin.ngos.show', function($breadcrumbs, $ngo)
+{
+	$breadcrumbs->parent('admin.ngos');
+	$breadcrumbs->push($ngo->mm_name ? $ngo->mm_name : $ngo->name, route('ngos.show', ['id'=>$ngo->id]));
+});
+
 // Index > Ngos > Add
 Breadcrumbs::register('admin.ngos.add', function($breadcrumbs)
 {

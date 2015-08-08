@@ -9,5 +9,5 @@ use Disaster\DisasterLib\Interfaces\AbstractInterface;
  * @author Naing Win 
  */
 interface VillagesInterface extends AbstractInterface {
-
+	public function getVillagesByCity($city_id);
 }

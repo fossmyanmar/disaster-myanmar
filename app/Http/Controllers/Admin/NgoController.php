@@ -12,16 +12,16 @@ use Disaster\DisasterLib\Interfaces\StatesInterface;
 
 class NgoController extends Controller
 {
-    protected $ngos;
-    protected $states;
+	protected $ngos;
+	protected $states;
 
-    public function __construct(
-        NgosInterface $ngos,
-        StatesInterface $states)
-    {
-        $this->ngos = $ngos;
-        $this->states = $states;
-    }
+	public function __construct(
+		NgosInterface $ngos,
+		StatesInterface $states)
+	{
+		$this->ngos = $ngos;
+		$this->states = $states;
+	}
 
     /**
      * Display a listing of the resource.
@@ -30,9 +30,9 @@ class NgoController extends Controller
      */
     public function index()
     {
-        $ngos = $this->ngos->getPaginated();
+    	$ngos = $this->ngos->getPaginated();
 
-        return view('admin.ngos.index', compact('ngos'));
+    	return view('admin.ngos.index', compact('ngos'));
     }
 
     /**
@@ -42,8 +42,8 @@ class NgoController extends Controller
      */
     public function create()
     {
-        $states = $this->states->getList();
-        return view('admin.ngos.add', compact('states'));
+    	$states = $this->states->getList();
+    	return view('admin.ngos.add', compact('states'));
     }
 
     /**
@@ -54,30 +54,33 @@ class NgoController extends Controller
      */
     public function store(NgosRequest $request)
     {
-        $created = $this->ngos->create(array(
-            'name'          => $request->input('name'),
-            'mm_name'   => $request->input('mm_name'),
-            'founder' => $request->input('founder'), 
-            'mm_founder' => $request->input('mm_founder'),
-            'volunteers_count' => $request->input('volunteers_count'), 
-            'phone' => $request->input('phone'), 
-            'email' => $request->input('email'), 
-            'facebook' => $request->input('facebook'), 
-            'state_id' => $request->input('state_id'), 
-            'city_id' => $request->input('city_id'), 
-            'address' => $request->input('address'), 
-            'bank_account' => $request->input('bank_account'), 
-            'founded_date' => $request->input('founded_date'),
-            'slogan' => $request->input('slogan'),
-            ));
-        if($created)
-        {
-            return \Redirect::back()->with('success', 'Successfully Created');
-        }
-        else
-        {
-            return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.'); 
-        }
+    	$created = $this->ngos->create(array(
+    		'name'          => $request->input('name'),
+    		'mm_name'   => $request->input('mm_name'),
+    		'founder' => $request->input('founder'), 
+    		'mm_founder' => $request->input('mm_founder'),
+    		'registration_number' => $request->input('registration_number'),
+    		'volunteers_count' => $request->input('volunteers_count'), 
+    		'phone' => $request->input('phone'), 
+    		'email' => $request->input('email'), 
+    		'website' => $request->input('website'), 
+    		'facebook' => $request->input('facebook'), 
+    		'state_id' => $request->input('state_id'), 
+    		'city_id' => $request->input('city_id'), 
+    		'address' => $request->input('address'), 
+    		'bank_account' => $request->input('bank_account'), 
+    		'founded_date' => $request->input('founded_date'),
+    		'slogan' => $request->input('slogan'),
+    		'type' => $request->input('type'), 
+    		));
+    	if($created)
+    	{
+    		return \Redirect::back()->with('success', 'Successfully Created');
+    	}
+    	else
+    	{
+    		return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.'); 
+    	}
     }
 
     /**
@@ -88,7 +91,8 @@ class NgoController extends Controller
      */
     public function show($id)
     {
-        //
+    	$ngo = $this->ngos->getById($id);
+    	return view('admin.ngos.show', compact('ngo'));
     }
 
     /**
@@ -122,11 +126,11 @@ class NgoController extends Controller
      */
     public function destroy($id)
     {
-        $deleted = $this->ngos->delete($id);
-        if($deleted)
-        {
-            return \Redirect::back()->with('success', 'Successfully Deleted');
-        }
-        return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.');
+    	$deleted = $this->ngos->delete($id);
+    	if($deleted)
+    	{
+    		return \Redirect::back()->with('success', 'Successfully Deleted');
+    	}
+    	return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.');
     }
 }

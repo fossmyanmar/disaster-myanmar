@@ -16,4 +16,9 @@ class VillagesRepository extends AbstractRepository implements VillagesInterface
 	{
 		$this->model = $model;
 	}
+
+	public function getVillagesByCity($city_id)
+	{
+		return $this->model->where('city_id', '=', $city_id)->lists('name', 'id')->toArray();
+	}
 }

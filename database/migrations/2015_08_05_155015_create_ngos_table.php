@@ -18,9 +18,11 @@ class CreateNgosTable extends Migration
             $table->string('mm_name')->nullable();
             $table->string('founder', 100)->nullable();
             $table->string('mm_founder')->nullable();
+            $table->string('registration_number', 100)->nullable();
             $table->integer('volunteers_count')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
+            $table->string('website')->nullable();
             $table->string('facebook')->nullable();
             $table->integer('state_id')->nullable();
             $table->integer('city_id')->nullable();
@@ -28,6 +30,7 @@ class CreateNgosTable extends Migration
             $table->text('bank_account')->nullable();
             $table->date('founded_date')->nullable();
             $table->string('slogan')->nullable();
+            $table->string('type');
             $table->timestamps();
         });
     }

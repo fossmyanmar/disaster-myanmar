@@ -16,10 +16,10 @@
 			<div class="panel-body">
 				<table class="table">
 					<thead>
-						<th>Name</th>
+						<th width="40%">Name</th>
 						<th>Founder</th>
 						<th>Phone</th>
-						<th>Address</th>
+						<th width="20%">Address</th>
 						<th>Options</th>
 					</thead>
 					<tbody>
@@ -43,7 +43,7 @@
 								
 								<a href="{!! URL::route('ngos.contact.add', ['id' => $ngo->id]) !!}" class="add-ngocontact btn btn-info btn-xs"><i class="fa fa-plus"></i></a>
 
-								<a href="#" class="list-view btn btn-default btn-xs"><i class="fa fa-search"></i></a>
+								<a href="{!! URL::route('ngos.show', ['id' => $ngo->id]) !!}" class="list-view btn btn-default btn-xs"><i class="fa fa-search"></i></a>
 							</td>
 						</tr>
 						@endforeach

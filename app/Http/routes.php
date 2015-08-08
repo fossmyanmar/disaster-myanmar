@@ -2,13 +2,8 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Frontend 
 |--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
 */
 get('/', [
 	'as' => 'frontend.index',
@@ -42,6 +37,11 @@ get('/submit/information', [
 
 Route::group(['prefix' => 'control-panel'], function()
 {
+	/*
+	|--------------------------------------------------------------------------
+	| Logout
+	|--------------------------------------------------------------------------
+	*/
 	Route::group(['middleware' => 'guest'], function()
 	{
 		get('login', [
@@ -57,6 +57,11 @@ Route::group(['prefix' => 'control-panel'], function()
 
 	Route::group(['middleware' => 'admin.auth'], function()
 	{
+		/*
+		|--------------------------------------------------------------------------
+		| User's Account
+		|--------------------------------------------------------------------------
+		*/
 		get('/', [
 			'as' 		=> 'admin.index', 
 			'uses'	=> 'Admin\MainController@index'
@@ -74,12 +79,13 @@ Route::group(['prefix' => 'control-panel'], function()
 			'uses'	=> 'Admin\MainController@updateMe'
 		]);
 
-		//Helpers
-		get('/cities/json', [
-			'as'		=> 'admin.cities.json',
-			'uses' 	=> 'Admin\HelperController@getCitiesByState'
-		]);
-
+		/*
+		|--------------------------------------------------------------------------
+		| Disaster Application Logics
+		|--------------------------------------------------------------------------
+		| Routes for Disaster Logics
+		|
+		*/
 		Route::resource('states', 'Admin\StateController', ['names' => set_route_name('states')]);
 		Route::resource('cities', 'Admin\CityController', ['names' => set_route_name('cities')]);
 		Route::resource('villages', 'Admin\VillageController', ['names' => set_route_name('villages')]);
@@ -89,5 +95,23 @@ Route::group(['prefix' => 'control-panel'], function()
 			'uses' => 'Admin\NgoContactController@add'
 		]);
 		Route::resource('ngo-contacts', 'Admin\NgoContactController', ['names' => set_route_name('ngo-contacts')]);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| Helpers
+		|--------------------------------------------------------------------------
+		| Routes for support json and others
+		|
+		*/
+		get('/cities/json', [
+			'as'		=> 'admin.cities.json',
+			'uses' 	=> 'Admin\HelperController@getCitiesByState'
+		]);
+		get('/villages/json', [
+			'as'		=> 'admin.villages.json', 
+			'uses'	=> 'Admin\HelperController@getVillagesByCity'
+		]);
+
 	});
 });
