@@ -81,6 +81,23 @@ Route::group(['prefix' => 'control-panel'], function()
 
 		/*
 		|--------------------------------------------------------------------------
+		| Helpers
+		|--------------------------------------------------------------------------
+		| Routes for support json and others
+		|
+		*/
+		get('/cities/json', [
+			'as'		=> 'admin.cities.json',
+			'uses' 	=> 'Admin\HelperController@getCitiesByState'
+		]);
+		
+		get('/villages/json', [
+			'as'		=> 'admin.villages.json', 
+			'uses'	=> 'Admin\HelperController@getVillagesByCity'
+		]);
+
+		/*
+		|--------------------------------------------------------------------------
 		| Disaster Application Logics
 		|--------------------------------------------------------------------------
 		| Routes for Disaster Logics
@@ -95,23 +112,5 @@ Route::group(['prefix' => 'control-panel'], function()
 			'uses' => 'Admin\NgoContactController@add'
 		]);
 		Route::resource('ngo-contacts', 'Admin\NgoContactController', ['names' => set_route_name('ngo-contacts')]);
-
-
-		/*
-		|--------------------------------------------------------------------------
-		| Helpers
-		|--------------------------------------------------------------------------
-		| Routes for support json and others
-		|
-		*/
-		get('/cities/json', [
-			'as'		=> 'admin.cities.json',
-			'uses' 	=> 'Admin\HelperController@getCitiesByState'
-		]);
-		get('/villages/json', [
-			'as'		=> 'admin.villages.json', 
-			'uses'	=> 'Admin\HelperController@getVillagesByCity'
-		]);
-
 	});
 });

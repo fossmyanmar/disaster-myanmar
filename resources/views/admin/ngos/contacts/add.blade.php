@@ -48,9 +48,16 @@
 						</div>
 						<div class="form-group">
 							<select class="form-control" id="select_city" name="city_id" disabled>
-								<option>City</option>
+								<option value="0">City</option>
 							</select>
 						</div>
+
+						<div class="form-group">
+							<select class="form-control" id="select_village" name="village_id" disabled>
+								<option value="0">Village</option>
+							</select>
+						</div>
+						
 						{!! Form::txtarea('address', 'Address') !!}
 					</div>
 				</div>
@@ -66,28 +73,49 @@
 @section('js')
 <script type="text/javascript">
 	$(document).ready(function() {
-		//Script for search bar
 		$('#select_state').change(function(){
-			$.getJSON("{{ route('admin.cities.json')}}", { state_id: $(this).val() }, 
-				function(data) {
-					var cities = $('#select_city');
-					if(data.length == 0)
-					{
-						cities.empty();
-						cities.append('<option value="no-data">No Cities</option>');
-						cities.prop('disabled', true);
-					}
-					else
-					{
-						cities.empty();
-						$.each(data, function(key, value) {   
-							cities
-							.append('<option value="' + key +'">' + value + '</option>');
-						});
-						cities.prop('disabled', false);
-					}
-				});
-		});
+				$.getJSON("{{ route('admin.cities.json')}}", { state_id: $(this).val() }, 
+					function(data) {
+						var cities = $('#select_city');
+						if(data.length == 0)
+						{
+							cities.empty();
+							cities.append('<option value="no-data">No Cities</option>');
+							cities.prop('disabled', true);
+						}
+						else
+						{
+							cities.empty();
+							$.each(data, function(key, value) {   
+								cities
+								.append('<option value="' + key +'">' + value + '</option>');
+							});
+							cities.prop('disabled', false);
+						}
+					});
+			});
+
+		$('#select_city').change(function(){
+				$.getJSON("{{ route('admin.villages.json')}}", { city_id: $(this).val() }, 
+					function(data) {
+						var villages = $('#select_village');
+						if(data.length == 0)
+						{
+							villages.empty();
+							villages.append('<option value="no-data">No Villages</option>');
+							villages.prop('disabled', true);
+						}
+						else
+						{
+							villages.empty();
+							$.each(data, function(key, value) {   
+								villages
+								.append('<option value="' + key +'">' + value + '</option>');
+							});
+							villages.prop('disabled', false);
+						}
+					});
+			});
 	});
 </script>
 @stop
