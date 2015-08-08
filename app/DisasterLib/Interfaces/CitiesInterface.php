@@ -11,4 +11,5 @@ use Disaster\DisasterLib\Interfaces\AbstractInterface;
 interface CitiesInterface extends AbstractInterface {
 	public function getList();
 	public function getCitiesByState($state_id);
+	public function getDistrictCity();
 }

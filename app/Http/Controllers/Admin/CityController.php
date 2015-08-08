@@ -29,12 +29,23 @@ class CityController extends Controller
      */
     public function index()
     {
-    	$states = $this->states->getList();
-    	$states = array_add($states, 'required', 'Select State');
-
     	$cities = $this->cities->getPaginated();
-    	return view('admin.cities.index', compact('states', 'cities'));
+    	return view('admin.cities.index', compact('cities'));
     }
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        $states = $this->states->getList();
+        $states = array_add($states, 'required', 'Select State');
+        $district_cities = $this->cities->getDistrictCity();
+        return view('admin.cities.add', compact('states'));
+    }
+
 
     /**
      * Store a newly created resource in storage.

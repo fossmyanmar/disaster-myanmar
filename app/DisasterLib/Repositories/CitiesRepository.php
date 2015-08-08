@@ -26,4 +26,9 @@ class CitiesRepository extends AbstractRepository implements CitiesInterface {
 	{
 		return $this->model->where('state_id', '=', $state_id)->lists('name', 'id')->toArray();
 	}
+
+	public function getDistrictCity()
+	{
+		return $this->model->where('is_district', '=', true)->get();
+	}
 }

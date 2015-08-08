@@ -10,7 +10,7 @@ class Village extends Model
 	protected $table = 'villages';
 
 	//Set fillable table column
-	protected $fillable = array('name', 'mm_name', 'city_id', 'lat', 'lng', 'position_code', 'population');
+	protected $fillable = array('name', 'mm_name', 'city_id', 'lat', 'lng', 'position_code', 'population', 'village_tract_leader', 'village_tract_id');
 
 	//Relationship to city
 	public function city()

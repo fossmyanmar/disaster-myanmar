@@ -10,7 +10,7 @@ class City extends Model
 	protected $table = 'cities';
 
 	//Set fillable table column
-	protected $fillable = array('name', 'mm_name', 'state_id', 'lat', 'lng', 'position_code', 'population');
+	protected $fillable = array('name', 'mm_name', 'state_id', 'lat', 'lng', 'position_code', 'population', 'is_district');
 
 	//Relationship to State
 	public function state()

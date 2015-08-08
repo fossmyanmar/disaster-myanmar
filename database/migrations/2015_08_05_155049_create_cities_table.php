@@ -24,6 +24,8 @@ class CreateCitiesTable extends Migration
             $table->decimal('lng', 11, 8)->nullable();
             $table->string('position_code', 50)->nullable();
             $table->integer('population')->nullable();
+            $table->boolean('is_district')->default(false);
+            $table->integer('district_id')->default(null);
             $table->timestamps();
         });
     }

@@ -24,6 +24,8 @@ class CreateVillagesTable extends Migration
             $table->decimal('lng', 11, 8)->nullable();
             $table->string('position_code', 50)->nullable();
             $table->integer('population')->nullable();
+            $table->boolean('village_tract_leader')->default(false);
+            $table->integer('village_tract_id')->default(null);
             $table->timestamps();
         });
     }

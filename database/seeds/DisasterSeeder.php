@@ -45,7 +45,8 @@ class DisasterSeeder extends Seeder
     		'mm_name' 	=> 'သံတွဲ',
     		'lat'		=> '18.4644309',
     		'lng' 		=> '94.3389504',
-    		'state_id'	=> $rakhine->id
+    		'state_id'	=> $rakhine->id,
+                        'is_district'    => true
     		]);
 
     	$toungap = City::create([

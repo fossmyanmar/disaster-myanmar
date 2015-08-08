@@ -31,6 +31,13 @@ Breadcrumbs::register('admin.cities', function($breadcrumbs)
 	$breadcrumbs->push('<i class="fa fa-map-marker"></i> Cities', route('cities.index'));
 });
 
+// Index > Cities > Create
+Breadcrumbs::register('admin.cities.add', function($breadcrumbs)
+{
+	$breadcrumbs->parent('admin.cities');
+	$breadcrumbs->push('<i class="fa fa-plus"></i> Add', route('cities.create'));
+});
+
 // Index > Villages
 Breadcrumbs::register('admin.villages', function($breadcrumbs)
 {
