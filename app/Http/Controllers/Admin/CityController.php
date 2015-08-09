@@ -38,13 +38,11 @@ class CityController extends Controller
      *
      * @return Response
      */
-    public function create()
-    {
-        $states = $this->states->getList();
-        $states = array_add($states, 'required', 'Select State');
-        $district_cities = $this->cities->getDistrictCity();
-        return view('admin.cities.add', compact('states'));
-    }
+     public function create()
+     {
+     	$states = $this->states->getList();
+     	return view('admin.cities.add', compact('states'));
+     }
 
 
     /**
@@ -55,14 +53,21 @@ class CityController extends Controller
      */
     public function store(CitiesRequest $request)
     {
+    	$is_district = false;
+    	if($request->input('is_district') == "on")
+    	{
+    		$is_district = true;
+    	}
     	$created = $this->cities->create(array(
     		'name'          => $request->input('name'),
     		'mm_name'   => $request->input('mm_name'),
-    		'state_id' => $request->input('state_id'),
+    		'state_id' => $request->input('state'),
     		'lat'               => $request->input('lat'),
     		'lng'               => $request->input('lng'),
     		'position_code' => $request->input('position'),
     		'population' => $request->input('population'),
+    		'is_district' => $is_district,
+    		'district_id' => $request->input('district_id'),
     		));
     	if($created)
     	{

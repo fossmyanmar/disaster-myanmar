@@ -45,7 +45,7 @@ Form::macro('chkbox', function($name, $label, $value = null)
 	return "
 		<div class='checkbox'>
 			<label>
-				<input type='checkbox' name='{$name}' {$value}>  {$label} 
+				<input type='checkbox' name='{$name}' {$value} id='{$name}'>  {$label} 
 			</label>
 		</div>
 	";

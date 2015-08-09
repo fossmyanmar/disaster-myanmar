@@ -72,6 +72,7 @@
 							@endforeach
 						</select>
 					</div>
+					
 					<div class="form-group">
 						<select class="form-control" id="select_city" name="city_id" disabled>
 							<option>City</option>

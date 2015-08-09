@@ -86,14 +86,22 @@ Route::group(['prefix' => 'control-panel'], function()
 		| Routes for support json and others
 		|
 		*/
+		//Get Cities by State
 		get('/cities/json', [
 			'as'		=> 'admin.cities.json',
 			'uses' 	=> 'Admin\HelperController@getCitiesByState'
 		]);
 		
+		//Get Villages by City
 		get('/villages/json', [
 			'as'		=> 'admin.villages.json', 
 			'uses'	=> 'Admin\HelperController@getVillagesByCity'
+		]);
+
+		//Get District City by State
+		get('/cities/district/json', [
+			'as'		=> 'admin.cities.distirct.json',
+			'uses'	=> 'Admin\HelperController@getDistrictCitiesByState'
 		]);
 
 		/*
