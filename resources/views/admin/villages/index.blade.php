@@ -4,10 +4,13 @@
 
 @section('content')
 <div class="row">
-	<div class="col-md-9">
+	<div class="col-md-12">
 		<section class="panel">
 			<div class="panel-heading">
 				List of Villages
+				<span class="pull-right">
+					<a href="{{ URL::route('villages.create') }}" class="btn btn-xs btn-danger"><i class="fa fa-plus"></i> Add New</a>
+				</span>
 			</div>
 			<div class="panel-body">
 				<table class="table">
@@ -47,96 +50,5 @@
 			</div>
 		</section>
 	</div>
-	<div class="col-md-3">
-		<section class="panel">
-			<div class="panel-heading">
-				Add new village
-			</div>
-			<div class="panel-body">
-				{!! Form::open(['route'=>'villages.store']) !!}
-					{!! Form::txt('name', 'Name') !!}
-					@if($errors->first('name'))
-					<p class="text-danger">{{$errors->first('name')}}</p>
-					@endif
-						
-					{!! Form::txt('mm_name', 'Name in Burmese') !!}
-					@if($errors->first('mm_name'))
-					<p class="text-danger">{{$errors->first('mm_name')}}</p>
-					@endif
-
-					<div class="form-group">
-						<select class="form-control" id="select_state" name="state">
-							<option value="0">State</option>
-							@foreach($states as $id => $name)
-							<option value="{{ $id }}">{{ $name }}</option>
-							@endforeach
-						</select>
-					</div>
-					
-					<div class="form-group">
-						<select class="form-control" id="select_city" name="city_id" disabled>
-							<option>City</option>
-						</select>
-					</div>
-					@if($errors->first('city_id'))
-					<p class="text-danger">{{$errors->first('city_id')}}</p>
-					@endif
-
-					{!! Form::txt('lat', 'Latitude') !!}
-					@if($errors->first('lat'))
-					<p class="text-danger">{{$errors->first('lat')}}</p>
-					@endif
-
-					{!! Form::txt('lng', 'Longitude') !!}
-					@if($errors->first('lng'))
-					<p class="text-danger">{{$errors->first('lng')}}</p>
-					@endif
-					
-					{!! Form::txt('position', 'Position Code') !!}
-					@if($errors->first('position'))
-					<p class="text-danger">{{$errors->first('position')}}</p>
-					@endif
-
-					{!! Form::txt('population', 'Population') !!}
-					@if($errors->first('population'))
-					<p class="text-danger">{{$errors->first('population')}}</p>
-					@endif
-
-					
-					{!! Form::button('<i class="fa fa-plus"></i> Add', array('class'=>'btn btn-danger', 'type' => 'submit')) !!}
-				{!! Form::close() !!}
-			</div>
-		</section>
-	</div>
 </div>
-@stop
-
-
-@section('js')
-	<script type="text/javascript">
-		$(document).ready(function() {
-			//Script for search bar
-			$('#select_state').change(function(){
-				$.getJSON("{{ route('admin.cities.json')}}", { state_id: $(this).val() }, 
-					function(data) {
-						var cities = $('#select_city');
-						if(data.length == 0)
-						{
-							cities.empty();
-							cities.append('<option value="no-data">No Cities</option>');
-							cities.prop('disabled', true);
-						}
-						else
-						{
-							cities.empty();
-							$.each(data, function(key, value) {   
-								cities
-								.append('<option value="' + key +'">' + value + '</option>');
-							});
-							cities.prop('disabled', false);
-						}
-					});
-			});
-		});
-	</script>
 @stop

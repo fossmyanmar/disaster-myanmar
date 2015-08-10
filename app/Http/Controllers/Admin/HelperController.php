@@ -43,4 +43,10 @@ class HelperController extends Controller
         $state_id = \Request::get('state_id');
         return \Response::json($this->cities->getDistrictCityByState($state_id));
     }
+
+    public function getVillageTractsByCity()
+    {
+        $city_id = \Request::get('city_id');
+        return \Response::json($this->villages->getVillageTractsByCity($city_id));
+    }
 }

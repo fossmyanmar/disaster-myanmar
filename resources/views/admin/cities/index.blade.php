@@ -40,6 +40,8 @@
  --}}
 								<button class="btn btn-danger btn-xs list-delete" data-toggle="modal" data-target="#delete-{!! $city->id !!}"><i class="fa fa-times"></i></button>
 								@include('admin.partials.delete', array('url' => 'cities.destroy', 'data' => $city))
+
+								<a href="{!! URL::route('cities.show', ['id' => $city->id]) !!}" class="list-view btn btn-default btn-xs"><i class="fa fa-search"></i></a>
 							</td>
 						</tr>
 						@endforeach

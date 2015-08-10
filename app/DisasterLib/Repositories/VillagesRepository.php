@@ -21,4 +21,13 @@ class VillagesRepository extends AbstractRepository implements VillagesInterface
 	{
 		return $this->model->where('city_id', '=', $city_id)->lists('name', 'id')->toArray();
 	}
+
+	public function getVillageTractsByCity($city_id)
+	{
+		return $this->model
+			->where('village_tract', '=', true)
+			->where('city_id', '=', $city_id)
+			->lists('name', 'id')
+			->toArray();
+	}
 }

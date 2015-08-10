@@ -54,7 +54,8 @@ class DisasterSeeder extends Seeder
     		'mm_name'   => 'တောင်ကုတ်',
     		'lat'       => '18.849151',
     		'lng'       => '94.2408084',
-    		'state_id'  => $rakhine->id
+    		'state_id'  => $rakhine->id,
+                        'district_id' => $thandwe->id
     		]);
 
     	//Village Seeder
@@ -75,6 +76,6 @@ class DisasterSeeder extends Seeder
     		'phone'		=> '09421730187',
     		'state_id'      => $rakhine->id,
     		'city_id'		=> $thandwe->id
-    		]); 
+    	]); 
     }
 }

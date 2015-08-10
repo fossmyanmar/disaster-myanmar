@@ -54,10 +54,14 @@ class CityController extends Controller
     public function store(CitiesRequest $request)
     {
     	$is_district = false;
+    	$district_id = null;
+    	
     	if($request->input('is_district') == "on")
-    	{
     		$is_district = true;
-    	}
+    	
+    	if($request->input('district_id') != 0)
+    		$district_id = $request->input('district_id');
+
     	$created = $this->cities->create(array(
     		'name'          => $request->input('name'),
     		'mm_name'   => $request->input('mm_name'),
@@ -67,7 +71,7 @@ class CityController extends Controller
     		'position_code' => $request->input('position'),
     		'population' => $request->input('population'),
     		'is_district' => $is_district,
-    		'district_id' => $request->input('district_id'),
+    		'district_id' => $district_id
     		));
     	if($created)
     	{
@@ -87,7 +91,18 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        //
+    	$city = $this->cities->getById($id);
+    	$district = '';
+    	if($city->is_district == true)
+    	{
+    		$district = $city;
+    	}
+    	else
+    	{
+    		$district = $this->cities->getById($city->district_id);
+    	}
+    	
+    	return view('admin.cities.show', compact('city', 'district'));
     }
 
     /**

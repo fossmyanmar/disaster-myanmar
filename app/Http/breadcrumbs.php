@@ -38,11 +38,26 @@ Breadcrumbs::register('admin.cities.add', function($breadcrumbs)
 	$breadcrumbs->push('<i class="fa fa-plus"></i> Add', route('cities.create'));
 });
 
+// Index > Cities > Detail
+Breadcrumbs::register('admin.cities.show', function($breadcrumbs, $city)
+{
+	$breadcrumbs->parent('admin.cities');
+	$breadcrumbs->push($city->mm_name ? $city->mm_name : $city->name, route('cities.show', ['id'=>$city->id]));
+});
+
+
 // Index > Villages
 Breadcrumbs::register('admin.villages', function($breadcrumbs)
 {
 	$breadcrumbs->parent('admin.index');
 	$breadcrumbs->push('<i class="fa fa-map-marker"></i> Villages', route('villages.index'));
+});
+
+// Index > Villages
+Breadcrumbs::register('admin.villages.add', function($breadcrumbs)
+{
+	$breadcrumbs->parent('admin.villages');
+	$breadcrumbs->push('<i class="fa fa-plus"></i> Add', route('villages.create'));
 });
 
 // Index > Ngos

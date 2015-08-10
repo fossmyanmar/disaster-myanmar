@@ -10,4 +10,5 @@ use Disaster\DisasterLib\Interfaces\AbstractInterface;
  */
 interface VillagesInterface extends AbstractInterface {
 	public function getVillagesByCity($city_id);
+	public function getVillageTractsByCity($city_id);
 }

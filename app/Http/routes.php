@@ -91,17 +91,23 @@ Route::group(['prefix' => 'control-panel'], function()
 			'as'		=> 'admin.cities.json',
 			'uses' 	=> 'Admin\HelperController@getCitiesByState'
 		]);
-		
+
+		//Get District City by State
+		get('/cities/district/json', [
+			'as'		=> 'admin.cities.distirct.json',
+			'uses'	=> 'Admin\HelperController@getDistrictCitiesByState'
+		]);
+
 		//Get Villages by City
 		get('/villages/json', [
 			'as'		=> 'admin.villages.json', 
 			'uses'	=> 'Admin\HelperController@getVillagesByCity'
 		]);
 
-		//Get District City by State
-		get('/cities/district/json', [
-			'as'		=> 'admin.cities.distirct.json',
-			'uses'	=> 'Admin\HelperController@getDistrictCitiesByState'
+		//Get Villages by City
+		get('/villages/tract/json', [
+			'as'		=> 'admin.villages.tract.json', 
+			'uses'	=> 'Admin\HelperController@getVillageTractsByCity'
 		]);
 
 		/*
