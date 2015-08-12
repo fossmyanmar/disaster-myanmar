@@ -18,4 +18,15 @@ class SubmitController extends Controller
     {
         return 'WIP';
     }
+
+    /**
+     * Show Originization Submit
+     *
+     * @return view
+     * @author Set Kyar Wa Lar <setkyar16@gmail.com>
+     **/
+    public function SubmitOrginization()
+    {
+        return view('frontend.orginization');;
+    }
 }

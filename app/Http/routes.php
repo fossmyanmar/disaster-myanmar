@@ -128,3 +128,8 @@ Route::group(['prefix' => 'control-panel'], function()
 		Route::resource('ngo-contacts', 'Admin\NgoContactController', ['names' => set_route_name('ngo-contacts')]);
 	});
 });
+
+get('/orginization/submit', [
+	'as'	=> 'originization.submit',
+	'uses' 	=> 'Frontend\SubmitController@SubmitOrginization'
+]);
