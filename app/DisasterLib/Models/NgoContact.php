@@ -22,12 +22,19 @@ class NgoContact extends Model
 		'ngo_id', 
 		'state_id', 
 		'city_id', 
-		'village_id'
+		'village_id',
+		'type',
 	);
 
 	//Relationship to Ngo
 	public function ngo()
 	{
 		return $this->belongsTo('Disaster\DisasterLib\Models\Ngo');
+	}
+
+	//Relationship to City
+	public function city()
+	{
+		return $this->belongsTo('Disaster\DisasterLib\Models\NgoContact');
 	}
 }

@@ -19,9 +19,15 @@ class State extends Model
 	}
 
 	//State has many villages
-	 public function villages()
+	public function villages()
 	    {
 	        return $this->hasManyThrough('Disaster\DisasterLib\Models\City', 'Disaster\DisasterLib\Models\Village', 'state_id', 'city_id');
+	    }
+
+	 //State has many contacts
+	public function ngoContacts()
+	    {
+	        return $this->hasManyThrough('Disaster\DisasterLib\Models\City', 'Disaster\DisasterLib\Models\NgoContact', 'state_id', 'city_id');
 	    }
 
 	//State has many ngos

@@ -23,10 +23,11 @@
 						{!! Form::txt('founder', 'Founder Name') !!}
 						{!! Form::txt('mm_founder', 'Founder Name in Burmese') !!}
 						{!! Form::txt('volunteers_count', 'Volunteers Count') !!}
-						{!! Form::datetime('founded_date', 'Since') !!}
-						@if($errors->first('founded_date'))
-						<p class="text-danger">{{$errors->first('founded_date')}}</p>
-						@endif
+
+						<div class="form-group">
+		                                      	<input name="founded_date" class="form-control form-control-inline input-medium default-date-picker"  size="16" type="text" value="" placeholder="Select Founded Date"/>
+		                              	</div>
+
 						{!! Form::txt('bank_account', 'Bank Account Number') !!}
 						{!! Form::txt('slogan', 'Slogan') !!}
 						<p class="lead">NGO Type</p>
@@ -74,6 +75,7 @@
 @stop
 
 @section('js')
+@include('admin.theme.partials.form-script')
 <script type="text/javascript">
 	$(document).ready(function() {
 		//Script for search bar
@@ -98,6 +100,6 @@
 					}
 				});
 		});
-	});
+	});	         
 </script>
 @stop
