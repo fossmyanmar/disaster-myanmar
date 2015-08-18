@@ -30,9 +30,9 @@
 							<td>{{ $ngo->mm_founder ? $ngo->mm_founder : $ngo->founder }}</td>
 							<td>{{ $ngo->phone }}</td>
 							<td>
-								{{ $ngo->address }}, 
-								{{ $ngo->city->mm_name ? $ngo->city->mm_name : $ngo->city->name }}, 
-								{{ $ngo->state->mm_name ? $ngo->state->mm_name : $ngo->state->name }}
+								{{ $ngo->address }} 
+								{{ $ngo->city ? $ngo->city->mm_name ? '၊ ' . $ngo->city->mm_name : '၊ ' . $ngo->city->name : ''}} 
+								{{ $ngo->state ? $ngo->state->mm_name ? '၊ ' . $ngo->state->mm_name : '၊ ' . $ngo->state->name : '' }}
 							</td>
 							<td>
 								<button class="btn btn-success btn-xs list-update" data-toggle="modal" data-target="#edit-{!! $ngo->id !!}"><i class="fa fa-edit"></i></button>

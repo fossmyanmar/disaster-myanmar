@@ -54,6 +54,7 @@ class NgoController extends Controller
      */
     public function store(NgosRequest $request)
     {
+    	// $founded_date = new \DateTime($request->founded_date);
     	$created = $this->ngos->create(array(
     		'name'          => $request->input('name'),
     		'mm_name'   => $request->input('mm_name'),
@@ -69,7 +70,7 @@ class NgoController extends Controller
     		'city_id' => $request->input('city_id'), 
     		'address' => $request->input('address'), 
     		'bank_account' => $request->input('bank_account'), 
-    		'founded_date' => $request->input('founded_date'),
+    		'founded_date' => $request->founded_date,
     		'slogan' => $request->input('slogan'),
     		'type' => $request->input('type'), 
     		));

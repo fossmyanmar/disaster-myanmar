@@ -29,7 +29,7 @@
 						@endif
 
 						<div class="form-group">
-							<label  id="what_is_village_tract" data-container="body" data-toggle="popover" data-placement="right" data-content="ဤကျေးရွာအုပ်စုတွင် အခြားရွာများရှိပါက အမှန်ခြစ်ရန်။" style="cursor:pointer">
+							<label  id="what_is_village_tract" data-container="body" data-toggle="popover" data-placement="right" data-content="ဤကျေးရွာလက်အောက်တွင် အခြားရွာများရှိပါက အမှန်ခြစ်ရန်။" style="cursor:pointer">
 								{!! Form::checkbox('village_tract', 'on', '', ['id' => 'village_tract']) !!} 
 								ကျေးရွာအုပ်စုခေါင်းဆောင်
 							</label>
