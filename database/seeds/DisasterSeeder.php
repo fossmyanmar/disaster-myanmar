@@ -46,7 +46,7 @@ class DisasterSeeder extends Seeder
     		'lat'		=> '18.4644309',
     		'lng' 		=> '94.3389504',
     		'state_id'	=> $rakhine->id,
-                        'is_district'    => true
+    		'is_district'    => true
     		]);
 
     	$toungap = City::create([
@@ -55,7 +55,7 @@ class DisasterSeeder extends Seeder
     		'lat'       => '18.849151',
     		'lng'       => '94.2408084',
     		'state_id'  => $rakhine->id,
-                        'district_id' => $thandwe->id
+    		'district_id' => $thandwe->id
     		]);
 
     	//Village Seeder
@@ -70,12 +70,22 @@ class DisasterSeeder extends Seeder
 
     	//Ngo Seeder
     	DB::table('ngos')->delete();
-    	$yangon = Ngo::create ([
-    		'name'      => 'Online Volunteers of Disasters Recovery for Myanmar (OVDR4MM)',
-    		'founder'   => 'Foundar Name',
-    		'phone'		=> '09421730187',
-    		'state_id'      => $rakhine->id,
-    		'city_id'		=> $thandwe->id
-    	]); 
+    	$seven_day = Ngo::create ([
+    		'name'      => '7day',
+    		'phone'   => '0973224541, 0973032006',
+    		'state_id'      => $yangon->id,
+    		'type'	=> 'donation_group',
+    		'email' => 'flood@7daydaily.com',
+    		'facebook' => 'https://www.facebook.com/7daynews', 
+    		'website' => 'www.7daydaily.com'
+    		]); 
+
+    	$white_mind = Ngo::create([
+    		'name'  => 'အဖြူရောင်စိတ်ထား (MYiD)',
+    		'type' => 'donation_group',
+    		'email' => 'contact@myidgroup.org',
+    		'facebook' => 'www.facebook.com/myidgroup',
+    		'phone' => '09451239666',
+    		]);
     }
 }

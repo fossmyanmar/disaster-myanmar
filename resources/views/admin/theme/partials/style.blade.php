@@ -1,4 +1,4 @@
-{!! Html::style('assets/admin-theme/bootstrap/bootstrap.min.css') !!}
+{!! Html::style('assets/css/vendor/bootstrap.css') !!}
 {!! Html::style('assets/admin-theme/bootstrap/bootstrap-reset.css') !!}
 {!! Html::style('assets/admin-theme/font-awesome/css/font-awesome.min.css') !!}
 {!! Html::style('assets/admin-theme/slidebars/slidebars.css') !!} 

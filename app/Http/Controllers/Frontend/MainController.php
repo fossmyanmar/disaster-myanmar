@@ -18,26 +18,4 @@ class MainController extends Controller
     {
         return view('frontend.index');
     }
-
-
-    public function donationGroup()
-    {
-        return view('frontend.groups');
-    }
-
-    public function news()
-    {
-    	return view('frontend.news');
-    }
-
-    public function addInfo()
-    {
-    	return view('frontend.infoadd');
-    }
-
-    public function map()
-    {
-        return view('frontend.map');
-    }
-
 }

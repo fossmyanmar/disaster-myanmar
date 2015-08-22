@@ -1,4 +1,4 @@
-@extends('frontend.template.layout')
+@extends('frontend.theme.layout')
 
 @section('content')
 <div class="row">
@@ -6,7 +6,7 @@
 		<p class="lead">Submit Your Orginization</p>
 	</div>
 
-	<div class="col-md-9">
+	<div class="col-md-6 col-md-offset-3">
 		<form action="">
 			<div class="form-group">
 				<label>Type of Help</label>

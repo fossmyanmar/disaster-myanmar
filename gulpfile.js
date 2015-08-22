@@ -22,7 +22,32 @@ var elixir = require('laravel-elixir');
  		'public/assets/css/vendor/toastr.css'
  		);
 
+ 	mix.copy(
+ 		'vendor/bower_components/bootstrap/dist/css/bootstrap.min.css', 
+ 		'public/assets/css/vendor/bootstrap.css'
+ 		);
+
+ 	mix.copy(
+ 		'vendor/bower_components/font-awesome/css/font-awesome.min.css', 
+ 		'public/assets/css/vendor/font-awesome/font-awesome.css'
+ 		);
+
+ 	mix.copy(
+ 		'vendor/bower_components/font-awesome/fonts', 
+ 		'public/assets/css/vendor/font-awesome/fonts'
+ 		);
+
  	//Js
+ 	mix.copy(
+ 		'vendor/bower_components/jquery/dist/jquery.min.js', 
+ 		'public/assets/js/vendor/jquery.js'
+ 		);
+
+ 	mix.copy(
+ 		'vendor/bower_components/bootstrap/dist/js/bootstrap.min.js', 
+ 		'public/assets/js/vendor/bootstrap.js'
+ 		);
+
  	mix.copy(
  		'vendor/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', 
  		'public/assets/js/vendor/bootstrap-datetimepicker.js'
