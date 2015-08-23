@@ -29,7 +29,7 @@ var elixir = require('laravel-elixir');
 
  	mix.copy(
  		'vendor/bower_components/font-awesome/css/font-awesome.min.css', 
- 		'public/assets/css/vendor/font-awesome/font-awesome.css'
+ 		'public/assets/css/vendor/font-awesome/css/font-awesome.css'
  		);
 
  	mix.copy(

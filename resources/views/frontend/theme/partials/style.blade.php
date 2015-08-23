@@ -1,7 +1,7 @@
  {!! Html::style('assets/css/vendor/bootstrap.css') !!}
  {!! Html::style('assets/theme/css/theme.css') !!}
  {!! Html::style('assets/theme/css/bootstrap-reset.css') !!}
- {!! Html::style('assets/css/vendor/font-awesome/font-asesome.css') !!}
+ {!! Html::style('assets/css/vendor/font-awesome/css/font-awesome.css') !!}
  {!! Html::style('assets/theme/css/flexslider.css') !!}
  {!! Html::style('assets/theme/assets/bxslider/jquery.bxslider.css') !!}
  {!! Html::style('assets/theme/assets/fancybox/source/jquery.fancybox.css') !!}

@@ -13,15 +13,18 @@
 			<div class="navbar-collapse collapse ">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="{!! URL::route('frontend.index') !!}">Home</a></li>
-					<li><a href="{!! URL::route('ngo.add')!!}">Add NGO</a></li>
+					
 					<li class="dropdown ">
-						<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Dropdown <b class=" icon-angle-down"></b></a>
+						<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">NGOs <b class=" icon-angle-down"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Typography</a></li>
-							<li><a href="#">Buttons</a></li>
+							<li><a href="{!! URL::route('ngo.register') !!}">Register NGO</a></li>
+							<li><a href="{!! URL::route('ngo.login') !!}">Login</a></li>
+							<li><a href="{!! URL::route('donation.add')!!}">Add Your Donation</a></li>
 						</ul>
 					</li>
-					<li><a href="#">About</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Alert</a></li>
+					<li><a href="#">How this website work?</a></li>
 					<li><input type="text" placeholder=" Search" class="form-control search"></li>
 				</ul>
 			</div>

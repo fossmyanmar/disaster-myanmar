@@ -4,7 +4,7 @@ Form::macro('txt', function($name, $label, $value=null)
 {
 	return "
 		<div class='form-group'>
-			<label class='control-label sr-only' for='{$name}'>{$label}</label>
+			<label class='control-label' for='{$name}'>{$label}</label>
 			<input type='text' class='form-control' name='{$name}' id='{$name}' placeholder='{$label}' value='{$value}'>
 		</div>
 	";
@@ -24,7 +24,7 @@ Form::macro('mail', function($name, $label, $value = null)
 {
 	return "
 		<div class='form-group'>
-			<label class='control-label sr-only'> {$label} </label>
+			<label class='control-label'> {$label} </label>
 			<input type='email' class='form-control' name='{$name}' id='{$name}' placeholder= '{$label }' value='{$value}'>
 		</div>
 	";
@@ -34,7 +34,7 @@ Form::macro('pwd', function($name, $label)
 {
 	return "
 		<div class='form-group'>
-			<label class='control-label sr-only'> {$label} </label>
+			<label class='control-label'> {$label} </label>
 			<input type='password' class='form-control' name= '{$name}'  id='{$name}' placeholder= '{$label}' >
 		</div>
 	";
@@ -74,4 +74,15 @@ Form::macro('datetime', function($name, $label, $value = null)
 	            </div>
 	        </div>	
 	";
+});
+
+Form::macro('formSubmit', function($label, $icon=null)
+{
+	return  " 
+		<div class='form-group'>
+			<button type='submit' class='btn btn-default'>
+				<i class='fa {$icon}'></i> 	
+				{$label}
+			</button>
+		</div>";
 });

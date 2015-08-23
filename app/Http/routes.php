@@ -10,35 +10,19 @@ get('/', [
 	'uses' => 'Frontend\MainController@index'
 ]);
 
-// get('/donation-groups', [
-// 	'as' => 'frontend.donation.group',
-// 	'uses' => 'Frontend\MainController@donationGroup'
-// ]);
+get('ngos/register', [
+	'as'	=> 'ngo.register',
+	'uses' => 'Frontend\NgoController@register'
+]);
 
-// get('/news', [
-// 	'as' => 'frontend.news',
-// 	'uses' => 'Frontend\MainController@news'
-// ]);
+get('ngos/login', [
+	'as'	=> 'ngo.login',
+	'uses' => 'Frontend\NgoController@login'
+]);
 
-// get('/add-information', [
-// 	'as' => 'frontend.addinfo',
-// 	'uses' => 'Frontend\MainController@addInfo'
-// ]);
-
-// get('map', [
-// 	'as'	=> 'frontend.map',
-// 	'uses' => 'Frontend\MainController@map'
-// ]);
-
-// get('/submit/information', [
-// 	'as'	=> 'frontend.submit.information',
-// 	'uses' 	=> 'Frontend\SubmitController@information'
-// ]);
-
-
-get('/organization/submit', [
-	'as'	=> 'ngo.add',
-	'uses' 	=> 'Frontend\SubmitController@SubmitOrginization'
+get('/donations/add', [
+	'as'	=> 'donation.add',
+	'uses' 	=> 'Frontend\DonationController@addDonation'
 ]);
 
 Route::group(['prefix' => 'control-panel'], function()

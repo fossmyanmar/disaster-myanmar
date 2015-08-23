@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Disaster\Http\Requests;
 use Disaster\Http\Controllers\Controller;
 
-class SubmitController extends Controller
+class DonationController extends Controller
 {
     /**
      * Show Originization Submit
@@ -15,8 +15,8 @@ class SubmitController extends Controller
      * @return view
      * @author Set Kyar Wa Lar <setkyar16@gmail.com>
      **/
-    public function SubmitOrginization()
+    public function addDonation()
     {
-        return view('frontend.orginization');;
+        return view('frontend.add-donation');;
     }
 }
