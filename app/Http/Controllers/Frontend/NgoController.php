@@ -16,7 +16,8 @@ class NgoController extends Controller
 	 */
 	public function register()
 	{
-		return view('frontend.ngo.register');
+		$title = 'Register Ngo';
+		return view('frontend.ngo.register', compact('title'));
 	}
 
     	/**
@@ -26,6 +27,7 @@ class NgoController extends Controller
 	 */
     	public function login()
     	{
-    		return view('frontend.ngo.login');
+    		$title = 'Login';
+    		return view('frontend.ngo.login', compact('title'));
     	}
 }

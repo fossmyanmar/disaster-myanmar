@@ -1,10 +1,12 @@
 @extends('frontend.theme.layout')
 
+@section('breadcrumbs')
+{!! Breadcrumbs::render('ngos.register') !!}
+@stop
+
 @section('content')
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-		<h4 class="text-center">Register NGO</h4>
-		<hr>
 		{!! Form::txt('name', 'Name') !!}
 		{!! Form::mail('email', 'Email') !!}
 		{!! Form::txt('phone', 'Phone') !!}

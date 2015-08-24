@@ -79,3 +79,36 @@ Breadcrumbs::register('admin.ngos.add', function($breadcrumbs)
 	$breadcrumbs->parent('admin.ngos');
 	$breadcrumbs->push('<i class="fa fa-plus"></i> Add', route('ngos.create'));
 });
+
+
+
+// FORNTEND 
+// Index
+Breadcrumbs::register('frontend.index', function($breadcrumbs)
+{
+	$breadcrumbs->push('<i class="fa fa-home"></i>', route('frontend.index'));
+});
+//Index > Add Donation
+Breadcrumbs::register('donation.add', function($breadcrumbs)
+{
+	$breadcrumbs->parent('frontend.index');
+	$breadcrumbs->push('<i class="fa fa-plus"></i> Add Donation', route('donation.add'));
+});
+// Index > ngo list
+Breadcrumbs::register('ngos.list', function($breadcrumbs)
+{
+	$breadcrumbs->parent('frontend.index');
+	$breadcrumbs->push('<i class="fa fa-users"></i> NGOs', route('frontend.index'));
+});
+//Index > Ngo List > Ngo register
+Breadcrumbs::register('ngos.register', function($breadcrumbs)
+{
+	$breadcrumbs->parent('ngos.list');
+	$breadcrumbs->push('<i class="fa fa-pencil"></i> Register', route('ngo.register'));
+});
+//Index > Ngo List > Ngo Login
+Breadcrumbs::register('ngos.login', function($breadcrumbs)
+{
+	$breadcrumbs->parent('ngos.list');
+	$breadcrumbs->push('<i class="fa fa-sign-in"></i> Login', route('ngo.login'));
+});

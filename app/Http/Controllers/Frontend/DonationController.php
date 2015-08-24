@@ -17,6 +17,7 @@ class DonationController extends Controller
      **/
     public function addDonation()
     {
-        return view('frontend.add-donation');;
+        $title = 'Add Donation';
+        return view('frontend.add-donation', compact('title'));
     }
 }

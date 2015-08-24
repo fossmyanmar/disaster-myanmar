@@ -1,11 +1,11 @@
 @extends('frontend.theme.layout')
 
+@section('breadcrumbs')
+{!! Breadcrumbs::render('donation.add') !!}
+@stop 
+
 @section('content')
 <div class="row">
-	<div class="col-md-12">
-		<p class="lead">Add Your Donation</p>
-	</div>
-
 	<div class="col-md-12">
 		<form action="">
 			<div class="row">
