@@ -149,6 +149,8 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
+        'Zizaco\Entrust\EntrustServiceProvider'
+
     ],
 
     /*
@@ -201,6 +203,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+        'Entrust' => 'Zizaco\Entrust\EntrustFacade'
     ],
 
 ];

@@ -10,7 +10,8 @@
         "laravelcollective/html": "^5.1",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "greggilbert/recaptcha": "^2.0",
-        "fzaninotto/faker": "^1.5"
+        "fzaninotto/faker": "^1.5",
+        "zizaco/entrust": "dev-laravel-5"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
