@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 	<link rel="shortcut icon" href="img/favicon.png">
-	<title>Myanmar Disaster | {{ $title ? $title : 'Home'}}</title>
+	<title>Myanmar Disaster | {{ isset($title) ? $title : 'Home'}}</title>
 	@include('frontend.theme.partials.style')
 </head>
 <body>
