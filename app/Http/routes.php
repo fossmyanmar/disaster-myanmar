@@ -5,19 +5,34 @@
 | Frontend 
 |--------------------------------------------------------------------------
 */
+//Frontend Index 
 get('/', [
 	'as' => 'frontend.index',
 	'uses' => 'Frontend\MainController@index'
 ]);
 
+//NGO get register
 get('ngos/register', [
 	'as'	=> 'ngo.register',
 	'uses' => 'Frontend\NgoController@register'
 ]);
 
+//NGO post register
+post('ngos/register', [
+	'as'	=> 'ngo.postregister',
+	'uses' => 'Frontend\NgoController@postRegister'
+	]);
+
+//NGO get Login
 get('ngos/login', [
 	'as'	=> 'ngo.login',
 	'uses' => 'Frontend\NgoController@login'
+]);
+
+//NGO post login
+post('ngos/login', [
+	'as'	=> 'ngo.postlogin',
+	'uses' => 'Frontend\NgoController@postLogin'
 ]);
 
 get('/donations/add', [

@@ -14,7 +14,7 @@ Form::macro('txtarea', function($name, $label, $value=null)
 {
 	return "
 		<div class='form-group'>
-			<label class='control-label sr-only' for='{$name}'> {$label} </label>
+			<label class='control-label' for='{$name}'> {$label} </label>
 			<textarea class='form-control' name='{$name}' id='{$name}' placeholder='{$label}' rows='3'>{$value}</textarea>
 		</div>
 	";

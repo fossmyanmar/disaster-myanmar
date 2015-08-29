@@ -21,7 +21,7 @@ class CreateNgosTable extends Migration
             $table->string('registration_number', 100)->nullable();
             $table->integer('volunteers_count')->nullable();
             $table->string('phone')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email')->unique();
             $table->string('website')->nullable();
             $table->string('facebook')->nullable();
             $table->integer('state_id')->nullable();
@@ -31,6 +31,11 @@ class CreateNgosTable extends Migration
             $table->date('founded_date')->nullable();
             $table->string('slogan')->nullable();
             $table->string('type');
+            $table->string('password', 60);
+            $table->string('role');
+            $table->boolean('is_approve')->default(false);
+            $table->rememberToken();
+            $table->text('remark')->nullable();
             $table->timestamps();
         });
     }

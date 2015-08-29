@@ -4,7 +4,7 @@ namespace Disaster\Http\Requests\Frontend;
 
 use Disaster\Http\Requests\Request;
 
-class LoginRequest extends Request
+class NgoLoginRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,8 @@ class LoginRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'password' => 'required|min:6',
-            'conf_password' => 'required|same:password'
+            'email' => 'required',
+            'password' => 'required'
         ];
     }
 }

@@ -63,6 +63,7 @@
 							</select>
 						</div>
 						{!! Form::txtarea('address', 'Address') !!}
+						{!! Form::txtarea('remark', 'Remark') !!}
 					</div>
 				</div>
 				<hr>

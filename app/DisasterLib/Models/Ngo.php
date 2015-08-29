@@ -2,10 +2,16 @@
 
 namespace Disaster\DisasterLib\Models;
 
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class Ngo extends Model
+class Ngo extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
+	use Authenticatable, CanResetPassword;
+
     	//Set table
 	protected $table = 'ngos';
 
@@ -27,14 +33,25 @@ class Ngo extends Model
 		'bank_account', 
 		'founded_date', 
 		'slogan', 
-		'type'
+		'type',
+		'password',
+		'is_approve',
+		'role',
+		'remark'
 	);
+
+	/**
+	* The attributes excluded from the model's JSON form.
+	*
+	* @var array
+	*/
+	protected $hidden = ['password', 'remember_token'];
 
 	//Ngo has many contact persons
 	public function contactPerson()
 	{
 		return $this->hasMany('Disaster\DisasterLib\Models\NgoContact');
-	}
+	}	
 
 	//Relationship to State
 	public function state()

@@ -10,6 +10,7 @@
 {!! Html::script('assets/theme/assets/fancybox/source/jquery.fancybox.pack.js') !!}
 {!! Html::script('assets/theme/assets/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js') !!}
 {!! Html::script('assets/theme/assets/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js') !!}
+{!! Html::script('assets/admin-theme/toastr/toastr.min.js') !!}
 {!! Html::script('assets/theme/js/common-scripts.js') !!}
 {!! Html::script('assets/theme/js/revulation-slide.js') !!}
 

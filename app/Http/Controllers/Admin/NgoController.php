@@ -73,16 +73,20 @@ class NgoController extends Controller
     		'founded_date' => $request->founded_date,
     		'slogan' => $request->input('slogan'),
     		'type' => $request->input('type'), 
+    		'role' => 'ngo',
+    		'password' => \Hash::make($request->input('email')),
+    		'remakr' => $request->input('remark'),
+    		'is_approve' => true
     		));
-    	if($created)
-    	{
-    		return \Redirect::back()->with('success', 'Successfully Created');
-    	}
-    	else
-    	{
-    		return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.'); 
-    	}
-    }
+if($created)
+{
+	return \Redirect::back()->with('success', 'Successfully Created');
+}
+else
+{
+	return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.'); 
+}
+}
 
     /**
      * Display the specified resource.

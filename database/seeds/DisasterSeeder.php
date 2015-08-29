@@ -69,23 +69,23 @@ class DisasterSeeder extends Seeder
     		]);    	
 
     	//Ngo Seeder
-    	DB::table('ngos')->delete();
-    	$seven_day = Ngo::create ([
-    		'name'      => '7day',
-    		'phone'   => '0973224541, 0973032006',
-    		'state_id'      => $yangon->id,
-    		'type'	=> 'donation_group',
-    		'email' => 'flood@7daydaily.com',
-    		'facebook' => 'https://www.facebook.com/7daynews', 
-    		'website' => 'www.7daydaily.com'
-    		]); 
+    	// DB::table('ngos')->delete();
+    	// $seven_day = Ngo::create ([
+    	// 	'name'      => '7day',
+    	// 	'phone'   => '0973224541, 0973032006',
+    	// 	'state_id'      => $yangon->id,
+    	// 	'type'	=> 'donation_group',
+    	// 	'email' => 'flood@7daydaily.com',
+    	// 	'facebook' => 'https://www.facebook.com/7daynews', 
+    	// 	'website' => 'www.7daydaily.com'
+    	// 	]); 
 
-    	$white_mind = Ngo::create([
-    		'name'  => 'အဖြူရောင်စိတ်ထား (MYiD)',
-    		'type' => 'donation_group',
-    		'email' => 'contact@myidgroup.org',
-    		'facebook' => 'www.facebook.com/myidgroup',
-    		'phone' => '09451239666',
-    		]);
+    	// $white_mind = Ngo::create([
+    	// 	'name'  => 'အဖြူရောင်စိတ်ထား (MYiD)',
+    	// 	'type' => 'donation_group',
+    	// 	'email' => 'contact@myidgroup.org',
+    	// 	'facebook' => 'www.facebook.com/myidgroup',
+    	// 	'phone' => '09451239666',
+    	// 	]);
     }
 }

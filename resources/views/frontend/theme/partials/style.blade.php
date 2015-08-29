@@ -7,6 +7,7 @@
  {!! Html::style('assets/theme/assets/fancybox/source/jquery.fancybox.css') !!}
  {!! Html::style('assets/theme/assets/revolution_slider/css/rs-style.css') !!}
  {!! Html::style('assets/theme/assets/revolution_slider/rs-plugin/css/settings.css') !!}
+ {!! Html::style('assets/admin-theme/toastr/toastr.css') !!}
  {!! Html::style('assets/theme/css/style.css') !!}
  {!! Html::style('assets/theme/css/style-responsive.css') !!}
  

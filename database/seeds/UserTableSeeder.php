@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('ngos')->insert([
         		'name'	=> 'Admin',
         		'email' 	=> 'admin@email.com',
         		'password' 	=> \Hash::make('admin'),
