@@ -38,21 +38,28 @@ class NgoController extends Controller
 	 */
 	public function postRegister(RegisterRequest $request)
 	{
-		$created = $this->ngos->create([
-			'name' => $request->input('name'),
-			'email' => $request->input('email'),
-			'phone' => $request->input('phone'),
-			'password' => \Hash::make($request->input('password')),
-			'remark' => $request->input('remark'),
-			'role' => 'ngo'
-			]);
-		if($created)
-		{
-			return \Redirect::back()->with('success', 'Successfully Registered');
-		}
-		else
-		{
-			return \Redirect::back()->with('error', 'Something went wrong. We will fix soon.'); 
+		try {
+			//Add New NGO
+			$ngo = $this->ngos->create([
+				'name' => $request->input('name'),
+				'email' => $request->input('email'),
+				'phone' => $request->input('phone'),
+				'password' => \Hash::make($request->input('password')),
+				'remark' => $request->input('remark'),
+				'role' => 'ngo'
+				]);
+
+			//Sending email to admin
+			\Mail::send('emails.reminder', ['ngo' => $ngo], function ($m) use ($ngo) {
+				$m->to('kokoye2007@gmail.com')
+					->cc('lovenefil@gmail.com')
+					->subject('New NGO just registered!');
+			});
+
+			//Redirect 
+			return \Redirect::back()->with('success', 'Successfully Registered. Please wait to manually contact you.');
+		} catch (\Exception $e) {
+			return \Redirect::back()->with('error',  $e->getMessage()); 
 		}
 	}
 
@@ -67,6 +74,12 @@ class NgoController extends Controller
     		return view('frontend.ngo.login', compact('title'));
     	}
 
+    	/**
+    	 * NGO post login
+    	 * @param  NgoLoginRequest $request 
+    	 * @return response
+    	 * @author Naing Win <konaingwin01@gmail.com>
+    	 */
     	public function postLogin(NgoLoginRequest $request)
     	{
     		if (\Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember_me))
@@ -75,20 +88,14 @@ class NgoController extends Controller
     			{
     				echo "Hello There";
     			}
-    			\Auth::logout();
-    			return \Redirect::back()->with('error', 'Please wait to login. We will manually contact you soon.');
-    			// $url = \Session::get('attemptedUrl');
-    			// if(! isset($url))
-    			// {
-    			// 	$url = \URL::route('admin.index');
-    			// }
-    			// \Session::forget('attemptedUrl');
-    			// return \Redirect::to($url);
-    			
+    			else {
+    				\Auth::logout();
+    				return \Redirect::back()->with('error', 'Please wait to login. We will manually contact you soon.');
+    			}
     		}
-    		else
+    		else 
     		{
-    			return \Redirect::back()->with('error', 'email or password wrong');
+    			return \Redirect::back()->with('error', 'Username of Password wrong');
     		}
     	}
     }

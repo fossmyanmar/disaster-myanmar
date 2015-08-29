@@ -15,7 +15,8 @@ class UserTableSeeder extends Seeder
         		'name'	=> 'Admin',
         		'email' 	=> 'admin@email.com',
         		'password' 	=> \Hash::make('admin'),
-                    'role' => 'admin'
+                    'role' => 'admin',
+                    'is_approve' => true
         	]);
     }
 }
