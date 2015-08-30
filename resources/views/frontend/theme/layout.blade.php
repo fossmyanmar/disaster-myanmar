@@ -25,9 +25,9 @@
 		</div>
 	</div>
 	@endif
-	<div class="container">
-		@yield('content')
-	</div>
+	
+	@yield('content')
+	
 
 	@include('frontend.theme.partials.footer')
 	@include('frontend.theme.partials.script')

@@ -10,7 +10,7 @@
  {!! Html::style('assets/admin-theme/toastr/toastr.css') !!}
  {!! Html::style('assets/theme/css/style.css') !!}
  {!! Html::style('assets/theme/css/style-responsive.css') !!}
- 
+{!! Html::style('assets/css/style.css') !!} 
  <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
